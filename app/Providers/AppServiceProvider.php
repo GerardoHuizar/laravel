@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('GuzzleHttp\Client\Client', function () {
+            return new Client;
+        });
     }
 
     /**
